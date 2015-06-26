@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-        <title>Overview - Plugin Development</title>
+        <title>Example - The Meter and Me, and the Plugin makes Three - Plugin Development</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -53,12 +53,12 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
-                            <li class="active">
-                                <a href=".">Overview</a>
+                            <li >
+                                <a href="../overview">Overview</a>
                             </li>
                         
                             <li >
@@ -133,7 +133,7 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -146,15 +146,15 @@
                             </li>
                         
                             <li >
-                                <a href="../example-hello-world2">Example - Hello World part duex</a>
+                                <a href=".">Example - Hello World part duex</a>
                             </li>
                         
                             <li >
-                                <a href="../example-hello-world2">Example - Give it a REST</a>
+                                <a href=".">Example - Give it a REST</a>
                             </li>
                         
-                            <li >
-                                <a href="../example-hello-world2">Example - The Meter and Me, and the Plugin makes Three</a>
+                            <li class="active">
+                                <a href=".">Example - The Meter and Me, and the Plugin makes Three</a>
                             </li>
                         
                             <li >
@@ -204,12 +204,12 @@
                 
                 
                 <li >
-                    <a rel="next" href="../..">
+                    <a rel="next" href=".">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../quick-start">
+                    <a rel="prev" href="../additional-examples">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -226,47 +226,14 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#meter-plugin-development-overview">Meter Plugin Development Overview</a></li>
-        
-            <li><a href="#anatomy-of-a-meter-plugin">Anatomy of a Meter Plugin</a></li>
-        
-            <li><a href="#measurement-sampling">Measurement Sampling</a></li>
-        
-            <li><a href="#tools">Tools</a></li>
+        <li class="main active"><a href="#example-1-give-it-a-rest">Example #1 - Give It a REST</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="meter-plugin-development-overview">Meter Plugin Development Overview</h1>
-<p>A Boundary Meter Plugin is a small application written in <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">lua</a> that regularly reports arbitrary metrics that may optionally include one or more dashboards.</p>
-<h2 id="anatomy-of-a-meter-plugin">Anatomy of a Meter Plugin</h2>
-<p>The contents of a meter plugin are housed in a GitHub repository so that the can readily versioned and shared with the Boundary service (optional). All plugins are open source so the repository is required to be made public (note: github supports public repositories free of charge).</p>
-<p>A typically plugin consists of:</p>
-<p><strong>init.lua</strong></p>
-<p>User created lua program that continuously loops and collects metric values and then sends to the <em>Meter Plugin Manager</em> via standard out.</p>
-<p><strong>plugin.json</strong></p>
-<p>Meter plugin manifest that contains metadata about the meter plugin: command to run to start the plugin, inputs to the plugin, metric values created by the plugin, dashboard definitions, as a partial list.</p>
-<p><strong>metrics.json</strong></p>
-<p>Meter plugin manifest that contains metadata about the meter plugin: command to run to start the plugin, inputs to the plugin, metric values created by the plugin, dashboard definitions, as a partial list.</p>
-<p><strong>param.json</strong></p>
-<p>Created by the <em>Meter Plugin Manager</em> at runtime to provide specific configuration to the plugin.</p>
-<p><strong>README.md</strong></p>
-<p>Documentation that describes that platforms supported by the plugin, along with any dependent software and/or configuration required for the plugin to run.</p>
-<p><strong>icon.png</strong></p>
-<p>Path to an icon to display next to the plugin when browsing plugins in the Boundary settings dialog.</p>
-<p><strong>Other Files</strong></p>
-<p>Any other files, configuration, or specific libraries required by your meter plugin to run.</p>
-<p>Details on the plugin contents will be discussed in greater detail later in this guide.</p>
-<h2 id="measurement-sampling">Measurement Sampling</h2>
-<p>There are two possible ways to perform polling within meter plugin:</p>
-<p><strong>Looping</strong>
-a technique whereby the process that does the polling does not exit by itself but instead polls metrics in a loop with a builtin delay between polls (minimum of 1 second). This technique is preferred as it removes any extra overhead incurred by stopping/starting a process for every poll.</p>
-<p><strong>Non-looping</strong>
-the simplest technique whereby the plugin performs a single poll of metrics. The Boundary relay will launch the plugin repeatedly on the polling interval to gather metrics. While this method continues to be supported by the meter manager, it is highly recommended that all new plugins be developed using the <strong>looping</strong> polling method.</p>
-<h2 id="tools">Tools</h2>
-<p>Boundary provides other open source tools that assist in the development of meter plugins see <a href="../tools">Tools</a></p>
+<h2 id="example-1-give-it-a-rest">Example #1 - Give It a REST</h2>
 </div>
             
         </div>
