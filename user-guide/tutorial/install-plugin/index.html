@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>Install Plugin - Meter Plugin Development</title>
+	<title>Deploying A Plugin - Meter Plugin Development</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -122,7 +122,7 @@
                         </li>
                     
                         <li class="active">
-                            <a href="./">Install Plugin</a>
+                            <a href="./">Deploying A Plugin</a>
                         </li>
                     
                         <li >
@@ -292,14 +292,45 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#installing-a-meter-plugin">Installing a Meter Plugin</a></li>
+        <li class="main active"><a href="#deploying-a-meter-plugin">Deploying A Meter Plugin</a></li>
+        
+            <li><a href="#adding-the-meter-plugin-to-your-account">Adding the Meter Plugin To Your Account</a></li>
+        
+            <li><a href="#installing-the-meter-plugin">Installing the Meter Plugin</a></li>
+        
+            <li><a href="#verify-the-meter-plugin-is-installed">Verify the Meter Plugin is Installed</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="installing-a-meter-plugin">Installing a Meter Plugin</h1></div>
+<h1 id="deploying-a-meter-plugin">Deploying A Meter Plugin</h1>
+<p>Once the contents of the meter plugin have been defined, we can deploy
+the meter plugin into our account.</p>
+<p>To add the meter plugin to our account once again we will use the
+<a href="http://boundary.github.io/pulse-api-cli/">TrueSight Pulse CLIs</a>.</p>
+<h3 id="adding-the-meter-plugin-to-your-account">Adding the Meter Plugin To Your Account</h3>
+<p>To run the command to add the plugin we must have your TrueSight Pulse account
+e-mail and API token from Settings =&gt; Account. Additionally the name of your
+GitHub account is required. We then run the following command to add the plugin
+to your account.</p>
+<pre><code>$ plugin-add -e &lt;email@example.com&gt; -t &lt;API Token&gt; -n tutorial -o &lt;GitHub User name&gt; -r meter-plugin-tutorial
+</code></pre>
+
+<h3 id="installing-the-meter-plugin">Installing the Meter Plugin</h3>
+<p>Make the plugin active in your account by running the following command:</p>
+<pre><code>$ plugin-install -e &lt;email@example.com&gt; -t &lt;API Token&gt; -n tutorial
+</code></pre>
+
+<h3 id="verify-the-meter-plugin-is-installed">Verify the Meter Plugin is Installed</h3>
+<ol>
+<li>Login into your TrueSite Pulse Account</li>
+<li>Navigate to Settings =&gt; Plugins</li>
+<li>Scroll the list unit you see a plugin with the name <em>tutorial</em>.</li>
+</ol>
+<p>For additional details regarding deploying meter plugins see
+<a href="../../reference/deploying/">Deploying</a></p></div>
         </div>
 
         <footer class="col-md-12">
